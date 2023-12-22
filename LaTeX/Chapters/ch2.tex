@@ -1,8 +1,6 @@
-\chapter{Tools installation}
+\chapter{Alpha-Beta-CROWN installation}
 \label{chap:ch2}
 
-\section{Alpha-Beta-CROWN}
-\label{sec:ch2sec1}
 
 \par Alpha Beta Crown serves as a neural network verifier based on an efficient linear bound propagation framework and branch and bound \cite{abc}. Setting it up involved a two-step process: first, installing Miniconda and then the tool itself. There were no complications in the first part, as there is an executable file available on their official site that takes care of the entire setup once run. However, the latter part, involving the tool's installation, presented numerous complications.
 
@@ -17,6 +15,3 @@
 
 \par This error consumed a considerable amount of time, as the error message initially suggested an issue with the script. After extensive investigation, the root cause was traced to the configuration file. Instead of containing the necessary configuration for the conda environment, it referenced another configuration file by name. After resolving the configuration file issue, the installation of the tool seemed successful. However, when attempting to run it, another problem emerged indicating a missing library, "auto\_LiRPA". Although the necessary files existed, the error message revealed a discrepancy in the file path. It seemed that the correct location for this library was wrongly specified. With this adjustment, the setup concluded, and the tool run successfully.
  
-
-\section{Marabou}
-\label{sec:ch2sec2}

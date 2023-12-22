@@ -2,7 +2,7 @@
 %%%%%%%%%%%% cap: intro %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Introduction}\label{cap:intro}
+\chapter{Benchmark}\label{cap:intro}
 
 The assignments for this project, required the usage of one benchmark and two tools for which to analyze upon. For the purpose of our project, we have decided to utilize the ACASXU benchmark\footnote{\url{https://github.com/ChristopherBrix/vnncomp2023_benchmarks/tree/main/benchmarks/acasxu}}, along with the tools Alpha Beta Crown\footnote{\url{https://github.com/Verified-Intelligence/alpha-beta-CROWN}} and Marabou \footnote{\url{https://github.com/NeuralNetworkVerification/Marabou}}
 \section{Acasxu}\label{sect:acasxu}
@@ -14,4 +14,19 @@ These files contain specifications and properties that need to be verified or an
 \newpage
 \subsubsection{Instances.csv}
 This CSV file bundles the onnx and vnnlib files into groups, where vnnlib files are associated with onnx ones. There are 10 vnnlib files and 45 onnx files, and they are combined to form a total of 186 combinations. Each combination also has metadata containing how long can the selected tool run one specific combination. 
+\\
+
+The input data that can be found across the VNNLIB files, revolves around different aircraft parameters determined from sensor measurements\cite{kochenderfer2011robust}:
+\begin{itemize}
+  \item Distance from ownership to intruder;
+  \item Angle to intruder relative to aircraft heading direction length;
+  \item Heading angle of intruder relative to aircraft heading direction;
+  \item Speed of aircraft;
+  \item Speed of intruder;
+  \item Time until loss of vertical separation;
+  \item Previous advisory;
+\end{itemize}
+
+Five outputs represent the different horizontal advisories provided to the aircraft: Clear-of-Conflict (COC), weak right, strong right, weak left, or strong left.
+These values inputted into the neural network ( the ONNX files ), representing a combination of 45 deep neural networks created by mixing the time until loss of vertical separation and the previous advisory. The DNNs are fully connected, use ReLU activation functions, and have six hidden layers with a total of 300 ReLU nodes each. \cite{katz2017reluplex}
 
