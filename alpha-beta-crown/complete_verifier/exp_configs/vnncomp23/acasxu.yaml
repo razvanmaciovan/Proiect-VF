@@ -1,9 +1,10 @@
 # Configuration file for running the ACASXu benchmark (all properties).
 general:
   root_path:  /home/amalia/alpha-beta-crown/acasxu # Please clone the vnncomp2023 repo first as it contains the benchmark.
-  csv_name: instances_short1.csv
+  csv_name: instances.csv
   enable_incomplete_verification: False
   loss_reduction_func: max
+  save_adv_example: true
 data:
   num_outputs: 5
 solver:
@@ -28,3 +29,4 @@ bab:
 attack:
   pgd_order: after
   pgd_restarts: 10000
+  cex_path: ./test_cex.txt
